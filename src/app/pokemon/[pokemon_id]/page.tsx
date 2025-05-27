@@ -15,14 +15,6 @@ type Params = {
 }
 
 
-
-
-// Next.js passes the url parts which are defined between square brackets []
-// to the function which renders the page.
-
-
-// In our case http://localhost:3000/pokemon/2 is the URL.
-// Where the 2 is the [pokemon_id] and passed as a parameter.
 export default function PokemonPage({ params }: Params) {
   const {pokemon_id} = React.use(params);
    //pokemon - A constant state variable which stores the pokemon information and retains the data between renders.
