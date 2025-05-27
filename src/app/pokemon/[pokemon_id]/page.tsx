@@ -1,6 +1,7 @@
 // Instructs React (Next.js) to run this code on the client side.
 // Next.js by default would render this content on the server side where the application is hosted.
 'use client'
+import React from 'react';
 import { Pokemon } from '@/model/pokemon';
 import { useEffect, useState } from 'react';
 import { Container, Image, Spinner, Row } from 'react-bootstrap';
@@ -10,7 +11,7 @@ import PokeNavBar from '@/components/pokeNavBarComp';
 
 // This type is used to get the pokemon id from the url path
 type Params = {
-  params: { pokemon_id: string }
+  params: Promise<{ pokemon_id: string }>
 }
 
 
@@ -23,7 +24,7 @@ type Params = {
 // In our case http://localhost:3000/pokemon/2 is the URL.
 // Where the 2 is the [pokemon_id] and passed as a parameter.
 export default function PokemonPage({ params }: Params) {
-  const {pokemon_id} = params;
+  const {pokemon_id} = React.use(params);
    //pokemon - A constant state variable which stores the pokemon information and retains the data between renders.
    //setPokemon - A state setter function to update the variable and trigger React to render the component again.
    const [pokemon, setPokemon] = useState<Pokemon>();
