@@ -4,11 +4,12 @@ const nextConfig = {
         return [
             {
                 source: '/api/pokemon',
-                destination: 'https://cdewjecuj3.execute-api.eu-west-2.amazonaws.com/Prod/pokemon',
+                
+                destination: 'https://rpr35yaoze.execute-api.eu-west-2.amazonaws.com/Prod/pokemon',
             },
             {
                 source: '/api/pokemon/:id',
-                destination: 'https://cdewjecuj3.execute-api.eu-west-2.amazonaws.com/Prod/pokemon/:id',
+                destination: 'https://rpr35yaoze.execute-api.eu-west-2.amazonaws.com/Prod/pokemon:id',
             },
         ];
     }
